@@ -1,4 +1,5 @@
 #File name = zoo.py
+
 class Animal(object):
     def __init__(self, tail, paw, wool):
         self.tail = 1
@@ -40,11 +41,13 @@ class Rooster(Animal):
     def say_Cocorico(self):
         return "Cocorico"
 
+    
 lion = Animal(tail=1, paw=4, wool=True)
 dog = Dog(tail=1, paw=4, wool=True)
 cat1 = Cat(tail=1, paw=4, wool=True)
 cat2 = SphynxCat(tail=1, paw=4, wool=False)
 rooster1 = Rooster(tail=1, paw=2, wool=False)
+
 
 print (lion.paw)
 print (dog.paw)
@@ -93,6 +96,8 @@ class TestZoo(unittest.TestCase):
         self.assertEqual(rooster1.paw, 2)
         self.assertEqual(rooster1.wool, False)
         self.assertTrue(rooster1.say_Cocorico())
+        
+        
 if __name__ == '__main__':
     unittest.main
 
