@@ -1,6 +1,7 @@
 #File name = zoo.py
 
 class Animal(object):
+    
     def __init__(self, tail, paw, wool):
         self.tail = 1
         self.paw = 4
@@ -8,6 +9,7 @@ class Animal(object):
 
 
 class Dog(Animal):
+    
     def __init__(self, tail, paw, wool):
         Animal.__init__(self, tail, paw, wool)
 
@@ -16,6 +18,7 @@ class Dog(Animal):
 
 
 class Cat(Animal):
+    
     def __init__(self, tail, paw, wool):
         Animal.__init__(self, tail, paw, wool)
 
@@ -24,6 +27,7 @@ class Cat(Animal):
 
 
 class SphynxCat(Cat):
+    
     def __init__(self, tail, paw, wool):
         Cat.__init__(self, tail, paw, wool)
         self.wool = False
@@ -33,6 +37,7 @@ class SphynxCat(Cat):
 
 
 class Rooster(Animal):
+    
     def __init__(self, tail, paw, wool):
         Animal.__init__(self, tail, paw, wool)
         self.paw = 2
@@ -61,40 +66,68 @@ print (cat2.say_murr())
 print (rooster1.say_Cocorico())
 
 
-#TEST MY CODE:
+'''Writting test for my code'''
 
 from zoo import *
 import unittest
 
 class TestZoo(unittest.TestCase):
 
-    def test_animal(self):
+    def test_lion_tail(self):
         self.assertEqual(lion.tail, 1)
+        
+    def test_lion_paw(self):
         self.assertEqual(lion.paw, 4)
-        self.assertEqual(lion.wool, True)
+    
+    def test_lion_wool(self):
+        self.assertTrue(lion.wool)
 
-    def test_dog(self):
+    def test_dog_tail(self):
         self.assertEqual(dog.tail, 1)
+    
+    def test_dog_paw(self):
         self.assertEqual(dog.paw, 4)
-        self.assertEqual(dog.wool, True)
+        
+    def test_dog_wool(self):
+        self.assertTrue(dog.wool)
+        
+    def test_say_woof(self):
         self.assertTrue(dog.say_woof())
 
-    def test_cat(self):
+    def test_cat1_tail(self):
         self.assertEqual(cat1.tail, 1)
+       
+     def test_cat1_paw(self):
         self.assertEqual(cat1.paw, 4)
-        self.assertEqual(cat1.wool, True)
+        
+    def test_cat1_wool(self): 
+        self.assertTrue(cat1.wool)
+        
+    def test_say_meow(self):  
         self.assertTrue(cat1.say_meow())
 
-    def test_sphynxcat(self):
+    def test_cat2_tail(self):
         self.assertEqual(cat2.tail, 1)
+        
+    def test_cat2_paw(self):
         self.assertEqual(cat2.paw, 4)
-        self.assertEqual(cat2.wool, False)
+        
+    def test_cat2_wool(self):
+        self.assertFalse(cat2.wool)
+        
+     def test_say_murr(self):
         self.assertTrue(cat2.say_murr())
 
-    def test_rooster(self):
+    def test_rooster_tail(self):
         self.assertEqual(rooster1.tail, 1)
+        
+    def test_rooster_paw(self):
         self.assertEqual(rooster1.paw, 2)
-        self.assertEqual(rooster1.wool, False)
+        
+    def test_rooster_wool(self):
+        self.assertFalse(rooster1.wool)
+        
+    def test_say_Cocorico(self):
         self.assertTrue(rooster1.say_Cocorico())
         
         
